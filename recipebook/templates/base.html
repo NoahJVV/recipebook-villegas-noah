@@ -4,7 +4,9 @@
     <title>Recipe Book</title>
 </head>
     <body>
-        <h1>Recipe Book</h1>
+        <h1>
+            <a href = "{% url 'ledger:list' %}">Recipe Book</a>
+        </h1>
 
         {% block content %} {% endblock %}
 

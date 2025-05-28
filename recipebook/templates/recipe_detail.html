@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <a href = "{{ recipe.get_absolute_url }}add_image">Upload Image</a> <br>
+
+    {% for image in object.images.all %}
+    <img src ="{{ image.image.url }}" alt="{{ image.desc }}" style="max-width: 400px;">
+    {% endfor %}
+
     <h1>{{ object.name }}</h1>
     
     <p><b>By: </b>{{ object.author.name }}</p>

@@ -1,0 +1,12 @@
+<html>
+	<head>
+	   <title>Create Recipe</title>	
+	</head>
+	<body>
+        <form method = "POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type ="submit">SUBMIT</button>
+        </form>
+	</body>
+</html>

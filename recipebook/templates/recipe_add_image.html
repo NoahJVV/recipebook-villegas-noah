@@ -1,0 +1,13 @@
+<html>
+	<head>
+	   <title>Upload Image</title>	
+	</head>
+	<body>
+        <a href = "{% url 'ledger:recipe' pk=recipe.pk %}">Return</a>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type ="submit">SUBMIT</button>
+        </form>
+	</body>
+</html>
