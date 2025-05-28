@@ -16,6 +16,7 @@ class Profile(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
+
 class Ingredient(models.Model):
     name = models.CharField(max_length=100)
 
@@ -42,7 +43,6 @@ class Recipe(models.Model):
     def get_absolute_url(self):
         return reverse('ledger:recipe', args=[self.pk])
 
-
 class RecipeIngredient(models.Model):
     quantity = models.CharField(max_length=50)
 
@@ -51,4 +51,11 @@ class RecipeIngredient(models.Model):
     )
     recipe = models.ForeignKey(
         'Recipe', on_delete=models.CASCADE, related_name='ingredients'
+    )
+
+class RecipeImage(models.Model):
+    image = models.ImageField(upload_to="images/", null=True)
+    desc = models.CharField(max_length=255)
+    recipe_image = models.ForeignKey(
+        "Recipe", on_delete=models.CASCADE, related_name="images"
     )
