@@ -3,14 +3,15 @@
 <head>
     <title>Recipe Book</title>
 </head>
-    <h1>Recipe Book</h1>
+    <body>
+        <h1>Recipe Book</h1>
 
-    {% block content %} {% endblock %}
+        {% block content %} {% endblock %}
 
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Logout</button>
-    </form>
-</body>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Logout</button>
+        </form>
+    </body>
 </html>
